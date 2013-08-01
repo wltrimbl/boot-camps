@@ -8,7 +8,7 @@ import numpy as np
 # retrieve the data by sending at HTTP GET request to the MG-RAST API
 ACCESSIONNUMBER = "mgm4440613.3"   # this is a public job
 some_url = "http://api.metagenomics.anl.gov/api2.cgi/metagenome_statistics/%s?verbosity=full" % ACCESSIONNUMBER
-sys.stderr.write("Retrieving %s\n" % some_url) 
+sys.stderr.write("Retrieving %s\n" % some_url)
 jsonobject = urllib.urlopen(some_url).read()
 
 # convert the data from a JSON structure to a python data type, a dict of dicts.
@@ -28,6 +28,6 @@ plt.plot(lengthdistribution[:, 0], lengthdistribution[:, 1], label="uploaded")
 plt.plot(lengthdistribution2[:, 0], lengthdistribution2[:, 1], label="post qc")
 plt.xlabel("length (bp)")
 plt.ylabel("number of reads")
-plt.title("Length distribution for %s" % ACCESSIONNUMBER ) 
+plt.title("Length distribution for %s" % ACCESSIONNUMBER )
 plt.legend()
 plt.show()

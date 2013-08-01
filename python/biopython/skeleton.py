@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-'''This is a skeleton python program.  It doesn't do anything, but it parses arguments and 
+'''This is a skeleton python program.  It doesn't do anything, but it parses arguments and
 calls a subroutine.'''
 
 def do_something(arg):
@@ -21,10 +21,10 @@ if __name__ == '__main__':
 #    argument = args[0]
     inputfile = opts.infile
 
-#    if opts.verbose: 
-#        sys.stdout.write("Argument: %s\n" % argument ) 
+#    if opts.verbose:
+#        sys.stdout.write("Argument: %s\n" % argument )
 
     do_something(inputfile)
 
-    if opts.verbose: 
+    if opts.verbose:
         sys.stdout.write("Done. \n")
