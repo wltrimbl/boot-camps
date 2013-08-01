@@ -103,7 +103,8 @@ of the home directory; yours could look like
 ## File Types
 
 When you enter the `ls` command, it lists the contents of the current
-directory. There are several items in the home directory, notice that
+directory, including files, subdirectories, and programs.
+There are several items in the home directory, notice that
 they are all colored blue. This tells us that all of these items are
 directories as opposed to files.
 
@@ -637,7 +638,8 @@ command backs up the file. Navigate to the `data` directory and enter:
 
     cp all_data all_data_backup
 
-Now `all_data_backup` has been created as a copy of `all_data`. We can
+Now `all_data_backup` has been created as a copy of `all_data`.
+If we type `ls -l` we can see the sizes of the two files are the same. We can
 move files around using the command `mv`. Enter this command:
 
     mv all_data_backup /tmp/
