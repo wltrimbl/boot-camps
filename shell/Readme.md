@@ -49,12 +49,13 @@ Desktop.
 We will spend most of our time learning about the basics of the shell
 by manipulating some experimental data from a hearing test. To get
 the data for this test, you will need internet access. Just enter the
-command:
+commands:
 
+    cd
     git clone -b YYYY-MM-PLACE --single-branch git://github.com/swcarpentry/boot-camps.git
 
 This command will grab all of the data needed for this workshop from
-the internet.  (We will talk about the `git` command later in the
+the internet and save it a folder called boot-camps in your home directory.  (We will talk about the `git` command later in the
 workshop.)
 
 # Let's get started
@@ -91,9 +92,17 @@ directory. This is the home directory for the `swc` user. That is our
 user name. You can always find out your user name by entering the
 command `whoami`.
 
+Different operating systems have different conventions for the naming
+of the home directory; yours could look like
+```
+/home/swc             # Software carpentry virtual box
+/Users/johann         # Mac OSX style
+/c/Users/johann       # gitbash on windows
+```
+
 ## File Types
 
-When you enter the `ls` command lists the contents of the current
+When you enter the `ls` command, it lists the contents of the current
 directory. There are several items in the home directory, notice that
 they are all colored blue. This tells us that all of these items are
 directories as opposed to files.
@@ -608,7 +617,7 @@ exists.
 Use `>>`, to append the contents of all of the files whose names
 contain the number 4 in the directory:
 
-    /home/swc/boot-camps/shell/data/gerdal
+    ~/boot-camps/shell/data/gerdal
 
 to the existing `all_data` file. Thus, when you are done `all_data`
 should contain all of the experiment data from Bert and any
@@ -850,7 +859,7 @@ create this file. Navigate to the `data` directory, then:
 
     nano smallest
 
-Then enter the following text:
+Then enter the following text, save, and quit nano:
 
     #!/bin/bash
     wc * | sort -k 3 -n | head -n 1
