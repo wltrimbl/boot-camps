@@ -387,7 +387,7 @@ Out[52]: 0
 
 **ZING!**
 
-Here's why type is important. Dividing two integers returnes an integer: this operation calculates the quotient and floors the result to get the answer.
+Here's why type is important. Dividing two integers returns an integer: this operation calculates the quotient and floors the result to get the answer.
 
 If everything was a float, the division is what you would expect.
 
@@ -427,7 +427,7 @@ In [63]: print fullName
 Johann Gambolputty
 ```
 
-There are other operations defined on string data. Use the dir comnand to find them. One example I'll show is the upper method. Lets take a look at the documentation.
+There are other operations defined on string data. Use the `dir` command to find them. One example I'll show is the `upper` method. Lets take a look at the documentation.
 
 ```python
 In [64]: str.upper?
