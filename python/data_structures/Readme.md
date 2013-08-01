@@ -6,8 +6,9 @@
 Trimble**
 
 Python would be a fairly useless language if it weren't for the compound
-data types. The main two are lists and dictionaries, but I'll mention sets
-and tuples as well. I'll also go over reading text data from files. 
+data types. The main two are **lists** and **dictionaries**, but I'll mention **sets**
+and **tuples** as well.  We'll talk about getting data into and out of these
+data types, and also go over reading text data from files.
 
 ## Lists
 
