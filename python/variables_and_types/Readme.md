@@ -1,13 +1,12 @@
-# Python, iPython, and the basics
+# Python, IPython, and the basics
 
 * * * * *
 
-
-**Based on Lecture Materials By: Milad Fatenejad, Katy Huff, Tommy Guy, Joshua 
+**Based on Lecture Materials By: Milad Fatenejad, Katy Huff, Tommy Guy, Joshua
 R. Smith, Will Trimble, and many more**
 
 ## Introduction
-This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called iPython notebook.  I expect this lecture to be interactive, so stop me at any point if you have questions. The correct power dynamic is that people are the masters and the machines are servants. The computer is a hammer; it exists to help us get things done.  We can hammer nails with the handle, with the claw of the hammer; some of us even hammer nails with bricks.  But when you learn what part of the hammer works best with nails, and have some experience swinging it, you spend less time worrying about the hammering and more time worrying about your furniture.
+This lecture is on basic programming in python. In order to do the examples, we are going to use an environment called IPython Notebook.  I expect this lecture to be interactive, so stop me at any point if you have questions. The correct power dynamic is that people are the masters and the machines are servants. The computer is a hammer; it exists to help us get things done.  We can hammer nails with the handle, with the claw of the hammer; some of us even hammer nails with bricks.  But when you learn what part of the hammer works best with nails, and have some experience swinging it, you spend less time worrying about the hammering and more time worrying about your furniture.
 
 So now would be a good time to roll out [PEP 20, The Zen of Python] (http://www.python.org/dev/peps/pep-0020/)
 
@@ -33,14 +32,16 @@ So now would be a good time to roll out [PEP 20, The Zen of Python] (http://www.
 
 This lecture will be structured as follows: I will be teaching the basics of two things: the python programming language (to a greater extent) and the ipython interpreter (to a lesser extent). The ipython interpreter is one of many different ways to implement python code. As far as the python component, I'll shoot for a layered approach: I'l continue building on my previous concepts. It turns out that like any sufficiently complex topic, its not really possible to force the pedagogy into a serial stream. Also, we have a pretty serious time constraint. I'm just going to drop it on you. Because of the brief nature of this tutorial, I've included links to some excellent reference material. Also, if we have time, I'll take questions based on the specific programming needs of this class.
 
-Here is the reference material.
+Here are some links to tutorials and reference material.
 
 * [Dive into Python] (http://www.diveintopython.net/toc/index.html)
 * [Software Carpentry's Python Lectures] (http://software-carpentry.org/4_0/python/)
 * [IPython: A System for Interactive Scientific Computing] (http://dx.doi.org/10.1109/MCSE.2007.53)
 * [How to Think Like a Computer Scientist] (http://www.greenteapress.com/thinkpython/thinkpython.html)
+* [Google's python class](https://developers.google.com/edu/python/)
+* [The python documentation](http://docs.python.org/2.7/)
 
-Once we briefly deal with ipython, I'll cover python in the following order:
+Once we briefly deal with getting around in IPython, I'll cover python in the following order:
 
 ## What I'll cover
 ### Lesson 1
@@ -55,8 +56,8 @@ Once we briefly deal with ipython, I'll cover python in the following order:
 
 ### Lesson 2
 * list
-* dictionary 
-* set 
+* dictionary
+* set
 * tuple
 * file reading
 
@@ -71,18 +72,18 @@ Once we briefly deal with ipython, I'll cover python in the following order:
 * methods
 * modules
 
-## iPython
-You can run python commands in a handful of ways; you can create executable scripts, you can run the python interpreter, you can run iPython, or you can run iPython notebook.  iPython is an alternative to the built-in Python interpreter with some nice features.  iPython notebook gives you interactive access to the python interpreter from within a browser window, and it allows you to save your commands as a "notebook".
+## IPython
+You can run python commands in a handful of ways; you can create executable scripts, you can run the python interpreter, you can run IPython, or you can run IPython Notebook.  IPython is an alternative to the built-in Python interpreter with some nice features.  IPython Notebook gives you interactive access to the python interpreter from within a browser window, and it allows you to save your commands as a "notebook".
 Lets give the built-in interpreter a spin just this once.
 
 ```
 swc@swc:~$ python
-Python 2.7.3 (default, Apr 20 2012, 22:44:07) 
+Python 2.7.3 (default, Apr 20 2012, 22:44:07)
 [GCC 4.6.3] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print "hello world"
 hello world
->>> quit() 
+>>> quit()
 ```
 
 We can also write python commands in a file and execute them from the command line. You will notice that the print command above is located in the file hello.py. Execute the following command at the command line
@@ -91,16 +92,27 @@ We can also write python commands in a file and execute them from the command li
 swc@swc:~$ python hello.py
 ```
 
-iPython has more useful features for interactive use than the standard python interpreter, so we'll use it from here on out.
+IPython has more useful features for interactive use than the standard python interpreter, like history and color, so we'll use it from here on out.
 
 ```python
-swc@swc:~$ ipython notebook
+swc@swc:~$ ipython
 In [1]: print "hello world"
 hello world
-In [2]: 
+In [2]:
 ```
 
-You may notice if you hit ENTER your current command does not execute.  ENTER puts a line break in your current command, and allows you to write multi-line commands and have them all executed at once.  
+**ipython notebook**  is another way to interact with python, in which python gets commands and returns output in a browser window.  Start ipython by changing directories to the directory containing this tutorial and entering `ipython notebook` into the shell:
+
+```python
+swc@swc:~/boot-camps/python/variables_and_types/$ ipython notebook variables.ipynb
+[NotebookApp] Using existing profile dir: u'/home/swc/.config/ipython/profile_default'
+[NotebookApp] Serving notebooks from /home/swc/boot-camps/python/variables_and_types
+[NotebookApp] The IPython Notebook is running at: http://127.0.0.1:8888/
+[NotebookApp] Use Control-C to stop this server and shut down all kernels.
+...
+```
+And a browser window should open with an interactive interface to the contents of `variables.ipynb`.
+You may notice if you hit ENTER your current command does not execute.  ENTER puts a line break in your current command, and allows you to write multi-line commands and have them all executed at once.
 SHIFT-ENTER sends the line that your cursor is on to the interpreter.  The output of the command, or the error message, appears below the line you entered it on.
 
 ```
@@ -108,30 +120,30 @@ In [2]: print "hello"
         print "world"
 hello
 world
-In [3]: 
+In [3]:
 ```
 
 ### Pasting
 
-You can paste things into the ipython console by copying text from your machine with **ctrl+c** and typing **%paste** at the iPython prompt.
+You can paste things into the IPython console by copying text from your machine with **ctrl+c** and typing **%paste** at the IPython prompt.
 
 ### History
 
-iPython has a history. If you press the up and down keys, you can access the history.
+IPython has a history. If you press the up and down keys, you can access the history.
 
 ### Tab Completion
 
-iPython also has tab completion of previous commands. Try typing "print" and then hit the tab key.
+IPython also has tab completion of previous commands. Try typing "print" and then hit the tab key.
 
 ### Getting Help
 
-iPython has some nice help features. Lets say we want to know more about the integer data type. There are at least two ways to do this task:
+IPython has some nice help features. Lets say we want to know more about the integer data type. There are at least two ways to do this task:
 
 ```python
 In [1] help(int)
 ```
 
-or 
+or
 
 ```python
 In [1] int?
@@ -145,15 +157,15 @@ In [1] dir(str)
 
 ### Executing code in files
 
-If your code is in a file, you can execute it from the iPython shell with the **%run** command. Execute hello.py like so
+If your code is in a file, you can execute it from the IPython shell with the **%run** command. Execute hello.py like so
 
 ```python
 In [1] %run hello.py
 ```
 
-### Clearing iPython
+### Clearing IPython
 
-To clear everything from iPython, use the reset command.
+To clear everything from IPython, use the reset command.
 
 ```python
 In [1] reset
@@ -180,7 +192,9 @@ In [5]: print voltage, current
 
 ## Types and Dynamic Typing
 
-Like most programming languages, things in python are typed. The type refers to the type of data. We've already defined three different types of data in experiment, voltage, and current. The types are string, integer, and float. You can inspect the type of a variable by using the type command.
+Like most programming languages, things in python are typed. The type refers to the type of data. The basic types are `string`, `integer`, and `float`. You can inspect the type of a variable by using the `type` command.
+
+Why should you care about data types?  In some cases, failing to pay attention to the data types will cause wrong answers.
 
 ```python
 In [6]: type(experiment)
@@ -195,7 +209,7 @@ Out[8]: <type 'float'>
 
 Python is a dynamically typed language (unlike, say, C++). If you know what that means, you may be feeling some fear and loathing right now. If you don't know what dynamic typing means, the next stuff may seem esoteric and pedantic. Its actually important, but its importance may not be clear to you until long after this class is over.
 
-Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. Lets say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second. 
+Dynamic typing means that you don't have to declare the type of a variable when you define it; python just figures it out based on how you are setting the variable. Lets say you set a variable. Sometime later you can just change the type of data assigned to a variable and python is perfectly happy about that. Since it won't be obvious until (possibly much) later why that's important, I'll let you marinate on that idea for a second.
 
 Here's an example of dynamic typing. What's the type of data assigned to voltage?
 
@@ -241,7 +255,7 @@ Out[21]: '2'
 
 In [22]: type(voltageString)
 Out[22]: <type 'str'>
-``` 
+```
 
 As you might imagine, you can go the other way in certain cases. Lets say you had numerical data in a string.
 
@@ -373,7 +387,7 @@ Out[52]: 0
 
 **ZING!**
 
-Here's why type is important. Divding two integers returnes an integer: this operation calculates the quotient and floors the result to get the answer.
+Here's why type is important. Dividing two integers returnes an integer: this operation calculates the quotient and floors the result to get the answer.
 
 If everything was a float, the division is what you would expect.
 
@@ -413,7 +427,7 @@ In [63]: print fullName
 Johann Gambolputty
 ```
 
-There are other operations deined on string data. Use the dir comnand to find them. One example I'll show is the upper method. Lets take a look at the documentation.
+There are other operations defined on string data. Use the dir comnand to find them. One example I'll show is the upper method. Lets take a look at the documentation.
 
 ```python
 In [64]: str.upper?
@@ -422,12 +436,12 @@ Base Class:     <type 'method_descriptor'>
 String Form:    <method 'upper' of 'str' objects>
 Namespace:      Python builtin
 Docstring:
-    S.upper() -> string                                                                                                                        
-    
+    S.upper() -> string
+
     Return a copy of the string S converted to uppercase.
 ```
 
-So we can use it to upper-caseify a string. 
+So we can use it to upper-caseify a string.
 
 ```python
 In [65]: fullName.upper()
@@ -445,5 +459,5 @@ Out[66]: 'JOHANN GAMBOLPUTTY'
 
 What do you think should happen when you take upper of an int?  What about a string representation of an int?
 
-That wraps up this lesson. We tried out the iPython shell and got some experience with ints, floats, and strings. Along the way we talked about some philosophy and how programming is about people.
+That wraps up this lesson. We tried out the IPython shell and got some experience with ints, floats, and strings. Along the way we talked about some philosophy and how programming is about people.
 
