@@ -12,7 +12,7 @@ with a keyboard instead of controlling graphical user interfaces
 
 Use a browser to open the tutorial on github, located at:
 
-    https://github.com/swcarpentry/boot-camps/blob/2013-06-wise-beginners
+    https://github.com/swcarpentry/boot-camps/tree/YYYY-MM-PLACE
 
 Click on the directory named `shell`.
 
@@ -563,7 +563,7 @@ are identical to the `man` program.
 | key     | action |
 | ------- | ---------- |
 | "space" | to go forward |
-|  "b"    | to go backwarsd |
+|  "b"    | to go backwards |
 |  "g"    | to go to the beginning |
 |  "G"    | to go to the end |
 |  "q"    | to quit |
@@ -709,6 +709,14 @@ Remember that `ls -l` prints out detailed information about a file and
 that the fifth column is the size of the file in bytes.
 
 * * * *
+=======
+**Short Exercise**
+
+Suppose you are running low on hard drive space.  Examine the man 
+page and figure out how to get `ls` to sort the directory listing 
+by size, putting the largest file last. 
+
+* * * *
 
 ## The awesome power of the Pipe
 
@@ -762,7 +770,7 @@ data to come in. Now type:
     are
     good
 
-then CONTROL+d. You should is the lines:
+then CONTROL+d. You should see the lines:
 
     are
     good
@@ -842,7 +850,7 @@ Hint: To print the smallest file, use:
 
     wc Bert/* | sort -k 3 -n | head -n 1
 
-* * * *
+# Writing a shell script
 
 Printing the smallest file seems pretty useful. We don't want to type
 out that long command often. Let's create a simple script, a simple
