@@ -1,15 +1,11 @@
-Software Carpentry Boot Camps
-=============================
+boot-camps
+==========
+![SWC logo](http://software-carpentry.org/img/software-carpentry-banner.png)
 
-This repository contains material useful when preparing and running a
-boot camp. This can include lecture notes, lesson plans, IPython
-Notebooks, exercises, and some types of presentations. Please see the
-[contributor guidelines][contrib] for more information on preferred
-file formats and other instructions for contributing.
+Welcome!
 
-This repository is also used to store material specific to boot
-camps. Refer to the [wiki][] for instructions on making your own boot
-camp branch and/or making a boot camp website.
+# WISE - June 24-25, 2013
+Software Carpentry boot camp material
 
 [contrib]: https://github.com/swcarpentry/boot-camps/blob/master/CONTRIBUTING.md
 [wiki]: https://github.com/swcarpentry/boot-camps/wiki
@@ -56,3 +52,9 @@ Follow these instructions to set up your SSH key which is necessary to identify 
 After you have added your SSH key to your git hub account per the instructions above you will be ready to go. For example if you wish to download the git repo for the bootcamp execute this command:
 
     git clone -b 2013-06-wise-beginners git@github.com:swcarpentry/boot-camps.git
+=======
+For a schedule and installation instructions check out the bootcamp webpage at
+https://github.com/swcarpentry/boot-camps/tree/2013-06-wise-intermediate.
+
+Install directions and the general course website are located at 
+http://swcarpentry.github.io/boot-camps/2013-06-24-wise/
